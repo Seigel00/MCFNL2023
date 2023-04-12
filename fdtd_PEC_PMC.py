@@ -37,6 +37,7 @@ for t in tRange:
     # Contorno lado derecho
     # e[-1] = 0.0 # PEC
     e[-1] = e[0] # Periódica
+    e[-1] = (-dt / dx / eps) * (h[-1] - h[-2]) + e[-1]
 
     h[:] = (-dt / dx / mu) * (e[1:] - e[:-1]) + h[:]
 
