@@ -31,7 +31,7 @@ tRange = np.arange(0, tFinal, dt) # Utiliza paso en vez de numero de puntos como
 for t in tRange:
     e[1:-1] = (-dt / dx / eps) * (h[1:] - h[:-1]) + e[1:-1]
     h[:] = (-dt / dx / mu) * (e[1:] - e[:-1]) + h[:]
-
+    
     plt.plot(x, e, '*')
     plt.plot(xDual, h, '.') # plt.plot(x, h) no funciona pq x tiene 101 elementos y h tiene 100
     plt.ylim(-1.1, 1.1)
